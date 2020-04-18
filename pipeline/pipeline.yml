@@ -20,6 +20,7 @@ resources:
   icon: github-circle
   source:
     uri: git@github.com:kubernetes/kubernetes.git
+    tag_filter: v1.18.2
     private_key: ((github_user_key))
 
 jobs:
