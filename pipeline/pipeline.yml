@@ -23,4 +23,5 @@ jobs:
     - get: golang
     - get: ci
   - task: do stuff
+    privileged: true
     file: ci/tasks/compile-golang/task.yml
