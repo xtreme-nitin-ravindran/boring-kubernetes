@@ -15,6 +15,13 @@ resources:
     branch: dev.boringcrypto.go1.14
     private_key: ((github_user_key))
 
+- name: kubernetes
+  type: git
+  icon: github-circle
+  source:
+    uri: git@github.com:kubernetes/kubernetes.git
+    private_key: ((github_user_key))
+
 jobs:
 - name: stuff
   serial_groups: [ one-at-a-time-clamav ]
@@ -22,6 +29,7 @@ jobs:
   - in_parallel:
     - get: golang
     - get: ci
+    - get: kubernetes
   - task: do stuff
     privileged: true
     file: ci/tasks/compile-golang/task.yml
