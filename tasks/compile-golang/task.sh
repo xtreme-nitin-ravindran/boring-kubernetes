@@ -3,5 +3,6 @@
 set -eux
 
 pushd golang
-    git log
+    cd src
+    ./all.bash
 popd
