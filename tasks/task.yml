@@ -1,0 +1,13 @@
+---
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: us.gcr.io/cf-security-audit-pci-rapid/golang-releaser
+    username: _json_key
+    password: ((gcr-viewer_gcp_json))
+inputs:
+- name: ci
+- name: golang
+run:
+  path: ci/tasks/compile-golang/task.sh

@@ -1,0 +1,26 @@
+resources:
+- name: ci
+  type: git
+  icon: github-circle
+  source:
+    uri: git@github.com:xtreme-nitin-ravindran/boring-kubernetes.git
+    branch: master
+    private_key: ((github_user_key))
+    
+- name: golang
+  type: git
+  icon: github-circle
+  source:
+    uri: git@github.com:golang/go.git
+    branch: dev.boringcrypto.go1.14
+    private_key: ((github_user_key))
+
+jobs:
+- name: stuff
+  serial_groups: [ one-at-a-time-clamav ]
+  plan:
+  - in_parallel:
+    - get: golang
+    - get: ci
+  - task: do stuff
+    file: ci/tasks/compile-golang/task.yml
