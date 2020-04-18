@@ -1,7 +1,7 @@
 #! /bin/bash
 set -ex
 apt-get update
-apt-get -y install golang
+apt-get -y install golang git
 
 export GOROOT_BOOTSTRAP=/usr/local/go
 
