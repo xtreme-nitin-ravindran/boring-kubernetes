@@ -8,5 +8,6 @@ image_resource:
 inputs:
 - name: ci
 - name: golang
+- name: kubernetes
 run:
   path: ci/tasks/compile-golang/task.sh

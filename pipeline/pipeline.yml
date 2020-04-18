@@ -25,7 +25,6 @@ resources:
 
 jobs:
 - name: stuff
-  serial_groups: [ one-at-a-time-clamav ]
   plan:
   - in_parallel:
     - get: golang
