@@ -1,7 +1,7 @@
 #! /bin/bash
 set -ex
 apt-get update
-apt-get -y install golang git
+apt-get -y install golang git build-essential
 current_dir=$(pwd)
 export GOROOT_BOOTSTRAP=/usr/local/go
 
