@@ -12,7 +12,7 @@ popd
 
 apt-get -y --purge remove golang
 
-export PATH=$current_dir/golang/bin;$PATH
+export PATH=$current_dir/golang/bin:$PATH
 
 go version
 
