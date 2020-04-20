@@ -11,7 +11,9 @@ pushd golang
 popd
 
 apt-get -y --purge remove golang
-export PATH=$PATH:$current_dir/golang/bin
+
+export PATH=$current_dir/golang/bin;$PATH
+
 go version
 
 pushd kubernetes
